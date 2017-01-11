@@ -5,9 +5,27 @@
 import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
+import VueRouter from 'vue-router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+Vue.use(VueRouter){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+
+import Home from './components/HelloFromVux'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+
+const routes = [{
+  path: '/',
+  components: Home{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+}]{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+
+const router = new VueRouter({
+  routes{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+}){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+
+const FastClick = require('fastclick')
+FastClick.attach(document.body)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  router,
   {{#if_eq build "runtime"}}
   render: h => h(App){{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   {{/if_eq}}
