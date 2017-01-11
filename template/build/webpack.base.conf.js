@@ -11,7 +11,7 @@ var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
-let config = {
+let webpackConfig = {
   entry: {
     app: './src/main.js'
   },
@@ -107,7 +107,7 @@ let config = {
 }
 
 
-module.exports = vuxLoader.merge(config, {
+module.exports = vuxLoader.merge(webpackConfig, {
   plugins: [
     {
       name: 'vux-ui'
