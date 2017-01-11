@@ -12,7 +12,7 @@ import Home from './components/HelloFromVux'{{#if_eq lintConfig "airbnb"}};{{/if
 
 const routes = [{
   path: '/',
-  components: Home{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+  component: Home{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
 }]{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 const router = new VueRouter({
@@ -30,7 +30,6 @@ new Vue({
   render: h => h(App){{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   {{/if_eq}}
   {{#if_eq build "standalone"}}
-  template: '<App/>',
   components: { App }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   {{/if_eq}}
-}){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+}).$mount('#app'){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
