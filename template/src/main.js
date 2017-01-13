@@ -3,12 +3,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 {{/if_eq}}
 import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-
+import FastClick from 'fastclick'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import VueRouter from 'vue-router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-Vue.use(VueRouter){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-
+import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 import Home from './components/HelloFromVux'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+
+Vue.use(VueRouter){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 const routes = [{
   path: '/',
@@ -19,8 +19,7 @@ const router = new VueRouter({
   routes{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
 }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
-const FastClick = require('fastclick')
-FastClick.attach(document.body)
+FastClick.attach(document.body){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 /* eslint-disable no-new */
 new Vue({
