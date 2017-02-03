@@ -33,7 +33,7 @@ delete webpackConfig.entry{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 // Use babel for test files too
 webpackConfig.module.loaders.some(function (loader, i) {
-  if (/^babel(-loader)?$/.test(loader.loader)) {
+  if (/^babel(-loader)?$/.test(loader.loader) && typeof loader.include === 'object') {
     loader.include.push(path.resolve(projectRoot, 'test/unit')){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
     return true{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   }
