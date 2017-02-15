@@ -23,6 +23,7 @@ FastClick.attach(document.body){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 /* eslint-disable no-new */
 new Vue({
+  el: '#app',
   router,
   render: h => h(App){{#if_eq lintConfig "airbnb"}},{{/if_eq}}
 }).$mount('#app'){{#if_eq lintConfig "airbnb"}};{{/if_eq}}

@@ -1,8 +1,13 @@
+// http://eslint.org/docs/user-guide/configuring
+
 module.exports = {
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module'
+  },
+  env: {
+    browser: true,
   },
   {{#if_eq lintConfig "standard"}}
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
@@ -43,6 +48,10 @@ module.exports = {
       'vue': 'never'
     }],
     'import/no-unresolved': [0, {commonjs: true, amd: true}],
+    // allow optionalDependencies
+    'import/no-extraneous-dependencies': ['error', {
+      'optionalDependencies': ['test/unit/index.js']
+    }],
     {{/if_eq}}
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
